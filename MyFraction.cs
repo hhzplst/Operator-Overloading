@@ -40,6 +40,18 @@ namespace OperatorOverloading {
     public static bool operator !=(MyFraction f1, MyFraction f2) {
       return !(f1 == f2);
     }
+    public static bool operator >(MyFraction f1, MyFraction f2) {
+      return f1.Num * f2.Denom > f2.Num * f1.Denom;
+    }
+    public static bool operator <(MyFraction f1, MyFraction f2) {
+      return f1.Num * f2.Denom < f2.Num * f1.Denom;
+    }
+    public static bool operator >=(MyFraction f1, MyFraction f2) {
+      return !(f1<f2);
+    }
+    public static bool operator <=(MyFraction f1, MyFraction f2) {
+      return !(f1>f2);
+    }
     public override bool Equals(Object o) {
       if(!(o is MyFraction)) return false;
       return this == (MyFraction)o;
