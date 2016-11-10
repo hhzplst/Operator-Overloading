@@ -59,6 +59,12 @@ namespace OperatorOverloading {
     public override int GetHashCode() {
       return (int)(Num ^ Denom); 
     }
+    public static implicit operator float(MyFraction f) {
+      return (float)(f.Num / f.Denom);
+    } 
+    public static explicit operator int(MyFraction f) {
+      return (int)(f.Num / f.Denom);
+    }
     private void Simplify() {
       long gcd;
       if (Denom < 0) {
