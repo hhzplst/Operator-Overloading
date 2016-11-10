@@ -35,35 +35,35 @@ namespace OperatorOverloading {
       return new MyFraction(-f.Num, f.Denom);
     }
     public static bool operator ==(MyFraction f1, MyFraction f2) {
-      return f1.Num * f2.Denom == f2.Num * f1.Denom;
+      return (f1.Num * f2.Denom == f2.Num * f1.Denom);
     }
     public static bool operator !=(MyFraction f1, MyFraction f2) {
-      return !(f1 == f2);
+      return (!(f1 == f2));
     }
     public static bool operator >(MyFraction f1, MyFraction f2) {
-      return f1.Num * f2.Denom > f2.Num * f1.Denom;
+      return (f1.Num * f2.Denom > f2.Num * f1.Denom);
     }
     public static bool operator <(MyFraction f1, MyFraction f2) {
-      return f1.Num * f2.Denom < f2.Num * f1.Denom;
+      return (f1.Num * f2.Denom < f2.Num * f1.Denom);
     }
     public static bool operator >=(MyFraction f1, MyFraction f2) {
-      return !(f1<f2);
+      return (!(f1<f2));
     }
     public static bool operator <=(MyFraction f1, MyFraction f2) {
-      return !(f1>f2);
+      return (!(f1>f2));
     }
     public override bool Equals(Object o) {
       if(!(o is MyFraction)) return false;
-      return this == (MyFraction)o;
+      return (this == (MyFraction)o);
     }
     public override int GetHashCode() {
-      return (int)(Num ^ Denom); 
+      return ((int)(Num ^ Denom)); 
     }
     public static implicit operator float(MyFraction f) {
-      return (float)(f.Num / f.Denom);
+      return ((float)(f.Num / f.Denom));
     } 
     public static explicit operator int(MyFraction f) {
-      return (int)(f.Num / f.Denom);
+      return ((int)(f.Num / f.Denom));
     }
     private void Simplify() {
       long gcd;
