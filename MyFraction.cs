@@ -9,9 +9,11 @@ namespace OperatorOverloading {
       Denom = denom;
       Simplify();
     }
-    // public static MyFraction operator +(MyFraction f1, MyFraction f2) {
-    //   return 
-    // }
+    public static MyFraction operator +(MyFraction f1, MyFraction f2) {
+      long tempNum = f1.Num * f2.Denom + f2.Num * f1.Denom;
+      long tempDenom = f1.Denom * f2.Denom;
+      return new MyFraction(tempNum, tempDenom); 
+    }
     public static MyFraction operator -(MyFraction f) {
       return new MyFraction(-f.Num, f.Denom);
     }
